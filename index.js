@@ -1,10 +1,22 @@
 const express = require('express')
+const sampleData = require('./sampleData')
 const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+
+// MasterDetail Page Endpoint
+app.get('/masterdetail', (req, res) => {
+  res.json(sampleData.textAssets)
+})
+
+// Grid Page Endpoint
+app.get('/grid', (req, res) => {
+  res.json(sampleData.textAssets)
+})
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
